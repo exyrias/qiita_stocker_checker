@@ -1,0 +1,1 @@
+javascript:(()=>{const pageid=location.href.split("/").pop();const uri="https://qiita.com/api/v2/items/"+pageid+"/stockers?per_page=100&page=1";const req=new XMLHttpRequest();req.open("GET", uri, true);req.onload = (function(){const stockers=JSON.parse(this.response);alert(stockers.length+"\n"+stockers.map((x)=>"- "+x.id).join("\n"));});req.send();})()
